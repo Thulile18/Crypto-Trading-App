@@ -1,4 +1,4 @@
-# Exchange – React Native UI Challenge
+# Crypto Trading App– React Native UI Challenge
 
 A crypto exchange screen built with React Native and Expo, based on the Crypto Trading App design by Bogdan Nikitin (Nixtio) on Dribbble.
 
