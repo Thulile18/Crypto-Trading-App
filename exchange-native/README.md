@@ -3,7 +3,7 @@
 A crypto exchange screen built with React Native and Expo, based on the Crypto Trading App design by Bogdan Nikitin (Nixtio) on Dribbble.
 
 ## Download
-Android APK: https://drive.google.com/file/d/1pVLJSAgOsuQyhH1B5duXJTTB5lT6h1ws/view?usp=drivesdk
+Android APK: https://drive.google.com/file/d/1f8AIvFlB3Qlc9C-XOyxjcV-IQ8w9FBwC/view?usp=drivesdk
 
 ## Features
 - Type an amount in either box and the other updates automatically
