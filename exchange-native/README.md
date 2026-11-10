@@ -1,9 +1,12 @@
-# Crypto Trading App– React Native UI Challenge
+# Crypto Trading App – React Native UI Challenge
 
-A crypto exchange screen built with React Native and Expo, based on the Crypto Trading App design by Bogdan Nikitin (Nixtio) on Dribbble.
+An exchange screen for a crypto trading app, built with React Native, Expo and TypeScript, based on the Crypto Trading App design by Bogdan Nikitin (Nixtio) on Dribbble.
 
 ## Download
 Android APK: https://drive.google.com/file/d/1f8AIvFlB3Qlc9C-XOyxjcV-IQ8w9FBwC/view?usp=drivesdk
+
+- If Google shows a virus-scan warning, click "Download anyway". It appears for every large file.
+- On your phone, Android may ask you to allow installs from this source. Allow it to install the app.
 
 ## Features
 - Type an amount in either box and the other updates automatically
@@ -23,12 +26,20 @@ Android APK: https://drive.google.com/file/d/1f8AIvFlB3Qlc9C-XOyxjcV-IQ8w9FBwC/v
 - ActionButton
 - DetailRow (used four times)
 
+## Project structure
+- App.tsx: the screen, state and logic
+- theme.ts: colours, spacing and radius values
+- data/market.ts: rate, fees and currencies
+- utils/numbers.ts: conversion and formatting helpers
+- types.ts: shared types
+- components/: reusable components
+
 ## Run it
 cd exchange-native
 npm install
 npx expo start
 
 ## Built with
-React Native, Expo, StyleSheet, expo-linear-gradient, react-native-svg
+React Native, Expo, TypeScript, StyleSheet, expo-linear-gradient, react-native-svg
 
 Author: Thulile
