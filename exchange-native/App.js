@@ -9,6 +9,7 @@ import {
   useWindowDimensions,
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { LinearGradient } from "expo-linear-gradient";
 
 import Header from "./components/Header";
 import CurrencyRow from "./components/CurrencyRow";
@@ -106,45 +107,52 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <SafeAreaView style={styles.screen}>
-        <StatusBar barStyle="light-content" />
-        <ScrollView
-          contentContainerStyle={styles.content}
-          keyboardShouldPersistTaps="handled"
-        >
-          <View style={styles.app}>
-            <Header title="Exchange" />
+      <LinearGradient
+        colors={["#34214d", colors.background, "#1d1229"]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={styles.screen}
+      >
+        <SafeAreaView style={styles.safe}>
+          <StatusBar barStyle="light-content" />
+          <ScrollView
+            contentContainerStyle={styles.content}
+            keyboardShouldPersistTaps="handled"
+          >
+            <View style={styles.app}>
+              <Header title="Exchange" />
 
-            <View style={styles.card}>
-              <CurrencyRow
-                currency={topCurrency}
-                value={topValue}
-                onChangeText={handleTopChange}
-                amountSize={amountSize}
-              />
-              <SwapDivider onPress={handleSwap} />
-              <CurrencyRow
-                currency={bottomCurrency}
-                value={bottomValue}
-                onChangeText={handleBottomChange}
-                amountSize={amountSize}
-              />
+              <View style={styles.card}>
+                <CurrencyRow
+                  currency={topCurrency}
+                  value={topValue}
+                  onChangeText={handleTopChange}
+                  amountSize={amountSize}
+                />
+                <SwapDivider onPress={handleSwap} />
+                <CurrencyRow
+                  currency={bottomCurrency}
+                  value={bottomValue}
+                  onChangeText={handleBottomChange}
+                  amountSize={amountSize}
+                />
+              </View>
+
+              <Text style={styles.rate}>
+                1 {coin.name} = {formatNumber(market.rate, 2)} {cash.name}
+              </Text>
+
+              <ActionButton title={buttonTitle} onPress={handleAction} />
+
+              <Text style={styles.message}>{message}</Text>
+
+              {details.map((item) => (
+                <DetailRow key={item.label} label={item.label} value={item.value} />
+              ))}
             </View>
-
-            <Text style={styles.rate}>
-              1 {coin.name} = {formatNumber(market.rate, 2)} {cash.name}
-            </Text>
-
-            <ActionButton title={buttonTitle} onPress={handleAction} />
-
-            <Text style={styles.message}>{message}</Text>
-
-            {details.map((item) => (
-              <DetailRow key={item.label} label={item.label} value={item.value} />
-            ))}
-          </View>
-        </ScrollView>
-      </SafeAreaView>
+          </ScrollView>
+        </SafeAreaView>
+      </LinearGradient>
     </SafeAreaProvider>
   );
 }
@@ -152,7 +160,9 @@ export default function App() {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: colors.background,
+  },
+  safe: {
+    flex: 1,
   },
   content: {
     flexGrow: 1,
