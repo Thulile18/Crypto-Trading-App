@@ -1,11 +1,17 @@
 import { Pressable, Text, StyleSheet } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { colors, radius } from "../theme";
+import type { PressState } from "../types";
 
-export default function ActionButton({ title, onPress }) {
+type Props = {
+  title: string;
+  onPress: () => void;
+};
+
+export default function ActionButton({ title, onPress }: Props) {
   return (
     <Pressable onPress={onPress}>
-      {({ pressed, hovered }) => (
+      {({ pressed, hovered }: PressState) => (
         <LinearGradient
           colors={
             pressed || hovered

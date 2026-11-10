@@ -1,7 +1,12 @@
 import { View, Text, StyleSheet } from "react-native";
 import { colors } from "../theme";
 
-export default function DetailRow({ label, value }) {
+type Props = {
+  label: string;
+  value: string;
+};
+
+export default function DetailRow({ label, value }: Props) {
   return (
     <View style={styles.row}>
       <Text style={styles.label}>{label}</Text>

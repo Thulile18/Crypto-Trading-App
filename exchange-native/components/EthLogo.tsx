@@ -9,7 +9,11 @@ const shapes = [
   { points: "0,212.32 127.96,287.958 127.96,154.159", color: "#8e8aa3" },
 ];
 
-export default function EthLogo({ size }) {
+type Props = {
+  size: number;
+};
+
+export default function EthLogo({ size }: Props) {
   const height = size * 0.55;
   const width = height * (256 / 417);
 

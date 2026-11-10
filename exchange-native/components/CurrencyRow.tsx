@@ -3,8 +3,16 @@ import { Ionicons } from "@expo/vector-icons";
 import CoinIcon from "./CoinIcon";
 import { colors, spacing } from "../theme";
 import { formatNumber } from "../utils/numbers";
+import type { Currency } from "../types";
 
-export default function CurrencyRow({ currency, value, onChangeText, amountSize }) {
+type Props = {
+  currency: Currency;
+  value: string;
+  onChangeText: (text: string) => void;
+  amountSize: number;
+};
+
+export default function CurrencyRow({ currency, value, onChangeText, amountSize }: Props) {
   return (
     <View style={styles.row}>
       <View style={styles.currency}>

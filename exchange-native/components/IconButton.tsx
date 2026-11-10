@@ -1,13 +1,23 @@
+import { ComponentProps } from "react";
 import { Pressable, View, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { colors } from "../theme";
+import type { PressState } from "../types";
 
-export default function IconButton({ name, color, showDot, label, onPress }) {
+type Props = {
+  name: ComponentProps<typeof Ionicons>["name"];
+  color: string;
+  showDot?: boolean;
+  label: string;
+  onPress?: () => void;
+};
+
+export default function IconButton({ name, color, showDot, label, onPress }: Props) {
   return (
     <Pressable
       onPress={onPress}
       accessibilityLabel={label}
-      style={({ pressed, hovered }) => [
+      style={({ pressed, hovered }: PressState) => [
         styles.button,
         (pressed || hovered) && styles.active,
       ]}

@@ -1,3 +1,5 @@
+import type { Currency } from "../types";
+
 export const market = {
   rate: 3461.02,
   feeRate: 0.0001,
@@ -5,7 +7,7 @@ export const market = {
   gasFee: 0.0045,
 };
 
-export const coin = {
+export const coin: Currency = {
   name: "ETH",
   symbol: "Ξ",
   balance: 293.0187,
@@ -13,7 +15,7 @@ export const coin = {
   hasLogo: true,
 };
 
-export const cash = {
+export const cash: Currency = {
   name: "USD",
   symbol: "$",
   balance: 12987.21,

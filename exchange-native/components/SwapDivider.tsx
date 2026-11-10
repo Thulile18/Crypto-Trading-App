@@ -1,15 +1,20 @@
 import { View, Pressable, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { colors } from "../theme";
+import type { PressState } from "../types";
 
-export default function SwapDivider({ onPress }) {
+type Props = {
+  onPress: () => void;
+};
+
+export default function SwapDivider({ onPress }: Props) {
   return (
     <View style={styles.wrapper}>
       <View style={styles.line} />
       <Pressable
         onPress={onPress}
         accessibilityLabel="Swap currencies"
-        style={({ pressed, hovered }) => [
+        style={({ pressed, hovered }: PressState) => [
           styles.button,
           (pressed || hovered) && styles.active,
         ]}

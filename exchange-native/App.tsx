@@ -33,14 +33,14 @@ export default function App() {
   // the amount text gets smaller on narrow phones
   const amountSize = Math.min(56, width * 0.13);
 
-  function handleTopChange(text) {
+    function handleTopChange(text: string) {
     setTopValue(text);
     const result = convert(toNumber(text), topCurrency, bottomCurrency);
     setBottomValue(formatNumber(result, bottomCurrency.decimals));
     setMessage("");
   }
 
-  function handleBottomChange(text) {
+    function handleBottomChange(text: string) {
     setBottomValue(text);
     const result = convert(toNumber(text), bottomCurrency, topCurrency);
     setTopValue(formatNumber(result, topCurrency.decimals));

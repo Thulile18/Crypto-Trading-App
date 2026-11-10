@@ -2,7 +2,11 @@ import { View, Text, StyleSheet } from "react-native";
 import IconButton from "./IconButton";
 import { colors, spacing } from "../theme";
 
-export default function Header({ title }) {
+type Props = {
+  title: string;
+};
+
+export default function Header({ title }: Props) {
   return (
     <View style={styles.header}>
       <IconButton name="chevron-back" color={colors.muted} label="Go back" />
