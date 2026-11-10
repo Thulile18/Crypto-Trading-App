@@ -1,5 +1,6 @@
 import { View, Text, TextInput, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import CoinIcon from "./CoinIcon";
 import { colors, spacing } from "../theme";
 import { formatNumber } from "../utils/numbers";
 
@@ -7,9 +8,7 @@ export default function CurrencyRow({ currency, value, onChangeText, amountSize 
   return (
     <View style={styles.row}>
       <View style={styles.currency}>
-        <View style={styles.coin}>
-          <Text style={styles.coinSymbol}>{currency.symbol}</Text>
-        </View>
+        <CoinIcon currency={currency} />
         <Text style={styles.name}>{currency.name}</Text>
         <Ionicons name="chevron-down" size={16} color={colors.muted} />
       </View>
@@ -40,19 +39,6 @@ const styles = StyleSheet.create({
   currency: {
     flexDirection: "row",
     alignItems: "center",
-  },
-  coin: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    backgroundColor: colors.cardLight,
-    justifyContent: "center",
-    alignItems: "center",
-    marginRight: spacing.small,
-  },
-  coinSymbol: {
-    color: colors.text,
-    fontSize: 20,
   },
   name: {
     color: colors.text,
