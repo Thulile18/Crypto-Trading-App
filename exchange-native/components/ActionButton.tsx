@@ -5,12 +5,11 @@ import type { PressState } from "../types";
 
 type Props = {
   title: string;
-  onPress: () => void;
 };
 
-export default function ActionButton({ title, onPress }: Props) {
+export default function ActionButton({ title }: Props) {
   return (
-    <Pressable onPress={onPress}>
+    <Pressable>
       {({ pressed, hovered }: PressState) => (
         <LinearGradient
           colors={

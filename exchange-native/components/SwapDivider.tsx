@@ -3,16 +3,11 @@ import { Ionicons } from "@expo/vector-icons";
 import { colors } from "../theme";
 import type { PressState } from "../types";
 
-type Props = {
-  onPress: () => void;
-};
-
-export default function SwapDivider({ onPress }: Props) {
+export default function SwapDivider() {
   return (
     <View style={styles.wrapper}>
       <View style={styles.line} />
       <Pressable
-        onPress={onPress}
         accessibilityLabel="Swap currencies"
         style={({ pressed, hovered }: PressState) => [
           styles.button,

@@ -1,4 +1,4 @@
-import { View, Text, TextInput, StyleSheet } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import CoinIcon from "./CoinIcon";
 import { colors, spacing } from "../theme";
@@ -7,12 +7,10 @@ import type { Currency } from "../types";
 
 type Props = {
   currency: Currency;
-  value: string;
-  onChangeText: (text: string) => void;
   amountSize: number;
 };
 
-export default function CurrencyRow({ currency, value, onChangeText, amountSize }: Props) {
+export default function CurrencyRow({ currency, amountSize }: Props) {
   return (
     <View style={styles.row}>
       <View style={styles.currency}>
@@ -21,14 +19,13 @@ export default function CurrencyRow({ currency, value, onChangeText, amountSize 
         <Ionicons name="chevron-down" size={16} color={colors.muted} />
       </View>
 
-      <TextInput
+      <Text
         style={[styles.amount, { fontSize: amountSize }]}
-        value={value}
-        onChangeText={onChangeText}
-        keyboardType="decimal-pad"
-        selectionColor={colors.accent}
-        accessibilityLabel={currency.name + " amount"}
-      />
+        numberOfLines={1}
+        adjustsFontSizeToFit={true}
+      >
+        {formatNumber(currency.amount, currency.decimals)}
+      </Text>
 
       <View style={styles.balanceRow}>
         <Text style={styles.balanceText}>Balance</Text>
@@ -56,7 +53,6 @@ const styles = StyleSheet.create({
   amount: {
     color: colors.text,
     fontWeight: "300",
-    paddingVertical: 0,
     marginVertical: spacing.small,
   },
   balanceRow: {

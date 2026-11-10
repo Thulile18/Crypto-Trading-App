@@ -9,12 +9,10 @@ Android APK: https://drive.google.com/file/d/1f8AIvFlB3Qlc9C-XOyxjcV-IQ8w9FBwC/v
 - On your phone, Android may ask you to allow installs from this source. Allow it to install the app.
 
 ## Features
-- Type an amount in either box and the other updates automatically
-- Swap button flips the currencies (Buy ETH / Sell ETH)
-- Balance check with an error message
-- Fee, amount received, spread and gas fee update with the amount
-- Buttons change colour when pressed or hovered
+- Pixel-matched layout of the Crypto Trading App exchange screen
+- Buttons and icons change colour when pressed or hovered
 - Responsive: text size and layout adjust to the screen width
+- All values come from one data file, nothing is hardcoded in the components
 
 ## Components
 - Header
