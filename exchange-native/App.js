@@ -10,13 +10,11 @@ import {
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { LinearGradient } from "expo-linear-gradient";
-
 import Header from "./components/Header";
 import CurrencyRow from "./components/CurrencyRow";
 import SwapDivider from "./components/SwapDivider";
 import ActionButton from "./components/ActionButton";
 import DetailRow from "./components/DetailRow";
-
 import { market, coin, cash } from "./data/market";
 import { toNumber, formatNumber, convert } from "./utils/numbers";
 import { colors, spacing, radius } from "./theme";
@@ -73,7 +71,7 @@ export default function App() {
     Alert.alert(
       "Order placed",
       buttonTitle + ": " + topValue + " " + topCurrency.name +
-        " for " + bottomValue + " " + bottomCurrency.name
+      " for " + bottomValue + " " + bottomCurrency.name
     );
   }
 
