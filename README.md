@@ -1,5 +1,9 @@
  Crypto Trading App – React Native UI Challenge
 
+ Socialify Image
+
+ <img src="https://socialify.git.ci/Thulile18/Crypto-Trading-App/image?language=1&owner=1&name=1&stargazers=1&theme=Light" alt="Crypto-Trading-App" width="640" height="320" />
+
 An exchange screen for a crypto trading app, built with React Native, Expo and TypeScript, based on the Crypto Trading App design by Bogdan Nikitin (Nixtio) on Dribbble.
 
  Download
